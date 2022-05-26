@@ -4,7 +4,7 @@ var courses = require('./model/course.model');
 
 app.get('/', (req, res) => {
   //   res.send("<h1>Hello Express !!!</h1>");
-  res.sendFile('Courses.html', { root: __dirname + '/public' });
+  res.sendFile('courses.html', { root: __dirname + '/public' });
 });
 
 // app.get("/script.js", (req, res) => {
@@ -25,7 +25,7 @@ app.delete('/course/:id', (req, res) => {
 
 // handler if no match found !
 app.use((req, res) => {
-  res.status(404).sendFile('Error.html', { root: __dirname + '/public' });
+  res.status(404).sendFile('error.html', { root: __dirname + '/public' });
 });
 
 app.listen(5000, () => console.log('Server running at port 5000 !'));
