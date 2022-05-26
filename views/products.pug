@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle    
+  body
+    header
+        h1= pageHeader
+    main 
+        ul 
+            each product in products 
+                li= product.title

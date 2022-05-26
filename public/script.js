@@ -1,8 +1,7 @@
 async function FetchCourses() {
   try {
     let response = await fetch('http://localhost:5000/courses');
-    let courses = await response.json(); // ok
-    //console.log(courses);
+    let courses = await response.json();
     DisplayCourses(courses);
   } catch (error) {
     console.log(error);
@@ -81,15 +80,12 @@ function CourseCardItem(course) {
 }
 
 function DeleteACourse(id) {
-  // async call with delete verb !
   fetch(`http://localhost:5000/course/${id}`, { method: 'DELETE' })
     .then((res) => res.json())
     .then((message) => {
       if (message.msg === 'success') {
-        // window.location.href = "/"; // posting the page to server and generating DOM with response received!
-        // OR
         var courseToBeDeleted = document.getElementById(id);
-        courseToBeDeleted.remove(); // removing from the DOM !
+        courseToBeDeleted.remove();
       }
     });
 }
